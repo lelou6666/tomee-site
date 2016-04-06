@@ -1,4 +1,5 @@
 Title: Deployments
+
 <a name="Deployments-The'Deployments'elementinopenejb.xml"></a>
 #  The 'Deployments' element in openejb.xml
 
@@ -40,7 +41,7 @@ pointing to the directory containing the jar files.
 
 The directories listed will be searched for jars containing
 'META-INF/ejb-jar.xml' files and will be added to the list of jars to load
-if they do.  Better said, it's completely save to point to a directory
+if they do.  Better said, it's completely safe to point to a directory
 containing a mix of ejbs and regular jar files.  OpenEJB will simply skip
 over jars that do contain the required 'META-INF/ejb-jar.xml' file.
 
@@ -58,15 +59,15 @@ OpenEJB.  You still need to follow the ejb jar layout and include an
 
 For example, if you have a directory structure like this:
 
-> C:\myapp\
-> C:\myapp\acmeEjbs\
-> C:\myapp\acmeEjbs\META-INF\ejb-jar.xml
-> C:\myapp\acmeEjbs\org\acme\Foo.class
-> C:\myapp\acmeEjbs\org\acme\FooBean.class
-> C:\myapp\acmeEjbs\org\acme\FooHome.class
-> C:\myapp\acmeEjbs\org\acme\Bar.class
-> C:\myapp\acmeEjbs\org\acme\BarBean.class
-> C:\myapp\acmeEjbs\org\acme\BarHome.class
+    > C:\myapp\
+    > C:\myapp\acmeEjbs\
+    > C:\myapp\acmeEjbs\META-INF\ejb-jar.xml
+    > C:\myapp\acmeEjbs\org\acme\Foo.class
+    > C:\myapp\acmeEjbs\org\acme\FooBean.class
+    > C:\myapp\acmeEjbs\org\acme\FooHome.class
+    > C:\myapp\acmeEjbs\org\acme\Bar.class
+    > C:\myapp\acmeEjbs\org\acme\BarBean.class
+    > C:\myapp\acmeEjbs\org\acme\BarHome.class
 
 Then you would delcare a 'Deployments' element with the 'dir' attribute set
 to 'C:\myapp\acmeEjbs' as shown below.

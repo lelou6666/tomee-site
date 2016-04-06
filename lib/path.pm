@@ -1,6 +1,8 @@
 package path;
 use strict;
 use warnings;
+use ASF::Value;
+
 
 # The @patterns array is used to map filepaths to page treatments.  Each
 # element must be an arrayref with 3 elements of its own: a regex pattern for
@@ -8,16 +10,67 @@ use warnings;
 # invoked to generate the page, and a hashref of named parameters which will
 # be passed to the view subroutine.
 
+
 our @patterns = (
-    [ qr!\.mdtext$!, basic => { template => "basic.html" } ],
+
+    [qr!^/index\.html$!, news_page => {
+        tomeeBlog     => ASF::Value::Blogs->new(blog => "tomee", limit=> 1),
+        openejbBlog     => ASF::Value::Blogs->new(blog => "openejb", limit=> 3),
+    }],
+
+    [qr!^/logo\.html$!, news_page => { }],
+    [qr!^/downloads.html$!, news_page => { }],
+    [qr!^/download/.*.html$!, news_page => { }],
+
+    [qr!^/download/tomee-1.*-snapshot.mdtext$!, basic => {
+        template => "snapshot.html"
+    }],
+    [qr!^/download/tomee-2.*-snapshot.mdtext$!, basic => {
+        template => "snapshot7.html"
+    }],
+    [qr!^/download/tomee-7.*-snapshot.mdtext$!, basic => {
+        template => "snapshot7.html"
+    }],
+
+    [qr!README\.md(text)?$!, example => {
+        template => "example.html"
+    }],
+
+    [qr!\.md(text)?$!, basic => {
+        template => "doc.html"
+    }],
+
+    [qr!\.swjira?$!, swizzle_jira => {
+        template => "doc.html"
+    }],
+
+    [qr!sitemap\.html$!, sitemap => {
+        headers => { title => "Sitemap" }
+    }],
+
+    [qr!dev/index\.html$!, sitemap => {
+        headers => { title => "Project Resources" }
+    }],
+    [qr!dev/jira/index\.html$!, sitemap => {
+        headers => { title => "Project Resources" }
+    }],
+
+    [qr!sitemap.xml$!, sitemapxml => {
+        headers => { }
+    }],
+
+
 );
 
 # The %dependecies hash is used when building pages that reference or depend
 # upon other pages -- e.g. a sitemap, which depends upon the pages that it
 # links to.  The keys for %dependencies are filepaths, and the values are
 # arrayrefs containing other filepaths.
-
-our %dependencies = ();
+our %dependencies = (
+    "/sitemap.html" => [ grep s!^content!!, glob "content/*.mdtext" ],
+    "/sitemap.xml" => [ grep s!^content!!, glob "content/*.mdtext" ],
+    "/dev/index.html" => [ grep s!^content!!, glob "content/dev/*.mdtext" ],
+);
 
 1;
 

@@ -1,0 +1,192 @@
+Title: Comparison
+
+Apache OpenEJB and Apache TomEE are born from the same project and community.  They differ in two major ways, only one of them technical:
+
+ - TomEE incorporates two additional projects; Tomcat and MyFaces
+ - TomEE, as a name, more easily implies the breadth of technologies included
+
+Effectively, TomEE is a superset of OpenEJB.  They share the same code and TomEE grew out of OpenEJB.
+
+<table>
+<tr>
+<th></th>
+<th>Tomcat</th>
+<th>TomEE</th>
+<th>TomEE JAXRS</th>
+<th>TomEE+</th>
+<th>TomEE PluME</th>
+<th>OpenEJB</th>
+</tr>
+
+<tr>
+<td>Java Servlets</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Java ServerPages (JSP)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Java ServerFaces (JSF)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Java Transaction API (JTA)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java Persistence API (JPA)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java Contexts and Dependency Injection (CDI)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java Authentication and Authorization Service (JAAS)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java Authorization Contract for Containers (JACC)</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>JavaMail API</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Bean Validation</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Enterprise JavaBeans</td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java API for RESTful Web Services (JAX-RS)</td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java API for XML Web Services (JAX-WS)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java EE Connector Architecture</td>
+<td></td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>Java Messaging Service (JMS)</td>
+<td></td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td>(/)</td>
+<td>(/)</td>
+</tr>
+
+<tr>
+<td>EclipseLink</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mojarra</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>(/)</td>
+<td></td>
+</tr>
+
+</table>
+

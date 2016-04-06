@@ -36,7 +36,7 @@ number of ServerServices are available currently:
 
 _The source for this example is in the "telephone-stateful" directory
 located in the [openejb-examples.zip](openejb:download.html)
- available on the download page._
+ available on the [download page](http://tomee.apache.org/downloads.html)._
 
 {note}
 If your goal is simply to unit test beans with remote interfaces, this is
@@ -136,7 +136,7 @@ Which should create output like the following.
     -------------------------------------------------------
     Running org.superbiz.telephone.TelephoneTest
     Apache OpenEJB 3.0    build: 20080408-04:13
-    http://openejb.apache.org/
+    http://tomee.apache.org/
     INFO - openejb.home =
 /Users/dblevins/work/openejb-3.0/examples/telephone-stateful
     INFO - openejb.base =

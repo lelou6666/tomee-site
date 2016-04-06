@@ -15,7 +15,25 @@ sub markdown_filter {
     # Use raw value rather than escape (by calling repr() rather than
     # string()) so that we can embed html in our .mdtext documents.
     my $raw  = $value->repr;
+
+    $raw =~ s,\(/\),<IMG class="emoticon" src="http://tomee.staging.apache.org/resources/images/check.png" height="16" width="16" align="absmiddle" alt="" border="0">,g;
+    $raw =~ s,\(x\),<IMG class="emoticon" src="http://tomee.apache.org/resources/images/error.png" height="16" width="16" align="absmiddle" alt="" border="0">,g;
+
+
+    my $start = "{{{{{";
+    my $end = "}}}}}";
+
+    $raw =~ s,(^|\n){,$start,g;
+    $raw =~ s,(^|\n)},$end,g;
+
     my $html = markdown($raw);
+
+    $html =~ s,$start([a-z0-9-]+),<div class="$1">,g;
+    $html =~ s,$end,</div>,g;
+
+    $html =~ s,<li><p>,<li>,g;
+    $html =~ s,</p></li>,</li>,g;
+
 
     # Blindly mark return value as safe.
     my $retval = Dotiac::DTL::Value->safe($html);
